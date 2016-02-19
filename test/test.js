@@ -20,11 +20,11 @@ describe('#effectiveDamage()', () => {
     assert.equal(dc.effectiveDamage(300, 2000, 2001), 300);
   });
 
-  it('実効防御は0未満にならない', () => {
+  it('実効防御力は0未満にならない', () => {
     assert.equal(dc.effectiveDamage(500, 100, 800), 500);
   });
 
-  it('実効ダメージは小数点以下を四捨五入して整数にする', () => {
+  it('ダメージは小数点以下を四捨五入して整数にする', () => {
     assert.equal(dc.effectiveDamage(620, 100, 30), 365);
   });
 
