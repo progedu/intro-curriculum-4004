@@ -1,6 +1,6 @@
 'use strict';
-let assert = require('assert');
-let dc = require('../');
+const assert = require('assert');
+const dc = require('../');
 
 describe('#effectiveDamage()', () => {
 
