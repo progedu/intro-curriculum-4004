@@ -28,4 +28,9 @@ describe('#effectiveDamage()', () => {
     assert.equal(dc.effectiveDamage(620, 100, 30), 365);
   });
 
+  it('防御と防御貫通の和がゾロ目ならクリティカル', () => {
+    assert.equal(dc.effectiveDamage(500, 122, 11), 474);
+    assert.equal(dc.effectiveDamage(1000, 344, 11), 462);
+  });
+
 });
