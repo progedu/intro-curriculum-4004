@@ -8,6 +8,7 @@
  * この実行防御力は、0未満にはならない。
  * ダメージ減少率は、実効防御力 / (100 + 実効防御力) で定義され、
  * ダメージは、攻撃力 * (1 - ダメージ減少率) を小数点以下で四捨五入した値となる。
+ * 実行防御力が ３桁のゾロ目になったらクリティカルヒットでダメージ2倍
  * 
  * @param {Number} power 攻撃力
  * @param {Number} armor 防御力
@@ -18,7 +19,11 @@ function effectiveDamage(power, armor, armorPenetration) {
   let effectiveArmor = normalize(armor) - normalize(armorPenetration);
   effectiveArmor = effectiveArmor <= 0 ? 0 : effectiveArmor;
   const damageDecrease = effectiveArmor / (100 + effectiveArmor);
-  return Math.floor(normalize(power) * (1 - damageDecrease));
+  var critical = 1;
+  if (effectiveArmor != 0 && ((effectiveArmor % 111) === 0)) {
+    critical = 2; 
+  }
+  return Math.round(normalize(power) * (1 - damageDecrease) * critical);
 }
 
 /**
