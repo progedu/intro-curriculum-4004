@@ -28,4 +28,10 @@ describe('#effectiveDamage()', () => {
     assert.equal(dc.effectiveDamage(620, 100, 30), 365);
   });
 
+  it('小数点が入力されても計算が出来る', () => {
+    assert.equal(dc.effectiveDamage(100.7, 50.2, 30), 84);
+    assert.equal(dc.effectiveDamage(100.7, 50.6, 30), 83);
+    assert.equal(dc.effectiveDamage(0.00, 0.000000, 0.0), 0);
+  });
+
 });
