@@ -7,7 +7,7 @@
  * 実効防御力は、防御力 - 防御力貫通 で定義され、
  * この実行防御力は、0未満にはならない。
  * ダメージ減少率は、実効防御力 / (100 + 実効防御力) で定義され、
- * ダメージは、攻撃力 * (1 - ダメージ減少率) を小数点以下で四捨五入した値となる。
+ * ダメージは、攻撃力 * (1 - ダメージ減少率) を小数点以下で四捨五入した値となる。 
  * 
  * @param {Number} power 攻撃力
  * @param {Number} armor 防御力
@@ -18,7 +18,7 @@ function effectiveDamage(power, armor, armorPenetration) {
   let effectiveArmor = normalize(armor) - normalize(armorPenetration);
   effectiveArmor = effectiveArmor <= 0 ? 0 : effectiveArmor;
   const damageDecrease = effectiveArmor / (100 + effectiveArmor);
-  return Math.floor(normalize(power) * (1 - damageDecrease));
+  return Math.round(normalize(power) * (1 - damageDecrease));
 }
 
 /**
