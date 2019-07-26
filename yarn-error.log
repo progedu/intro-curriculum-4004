@@ -1,0 +1,39 @@
+Arguments: 
+  /home/vagrant/.nodebrew/node/v8.9.4/bin/node /home/vagrant/.yarn/bin/yarn.js add mocha@4.0.1 --dev
+
+PATH: 
+  /home/vagrant/.nodebrew/current/bin:/home/vagrant/.yarn/bin:/home/vagrant/.config/yarn/global/node_modules/.bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+
+Yarn version: 
+  1.16.0
+
+Node version: 
+  8.9.4
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: EPROTO: protocol error, symlink '../../../he/bin/he' -> '/home/vagrant/workspace/intro-curriculum-4004/node_modules/mocha/node_modules/.bin/he'
+
+npm manifest: 
+  {
+    "name": "damage-calc",
+    "version": "1.0.0",
+    "description": "caliculator of damage",
+    "main": "index.js",
+    "author": "",
+    "scripts": {
+      "test": "node_modules/mocha/bin/mocha"
+    },
+    "license": "ISC",
+    "devDependencies": {
+      "mocha": "^4.0.1"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
