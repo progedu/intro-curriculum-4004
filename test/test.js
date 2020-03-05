@@ -28,4 +28,6 @@ describe('#effectiveDamage()', () => {
     assert.equal(dc.effectiveDamage(620, 100, 30), 365);
   });
 
+
+
 });
