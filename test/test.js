@@ -26,6 +26,12 @@ describe('#effectiveDamage()', () => {
 
   it('ダメージは小数点以下を四捨五入して整数にする', () => {
     assert.equal(dc.effectiveDamage(620, 100, 30), 365);
+    assert.equal(dc.effectiveDamage(729, 200, 100), 365);  // 364.5
+    assert.equal(dc.effectiveDamage(731, 200, 100), 366);  // 365.5
+    // 境界値テスト 365.5 なら 366 になってほしい
+    //              364.5 なら 365 になってほしい
+    // みたいなギリギリな値のチェックもする
+    // 今回の場合四捨五入なので「五捨六入」になっていたりしないように
   });
 
 });
