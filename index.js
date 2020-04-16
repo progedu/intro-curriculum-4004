@@ -1,3 +1,4 @@
+
 'use strict';
 
 /**
@@ -18,7 +19,13 @@ function effectiveDamage(power, armor, armorPenetration) {
   let effectiveArmor = normalize(armor) - normalize(armorPenetration);
   effectiveArmor = effectiveArmor <= 0 ? 0 : effectiveArmor;
   const damageDecrease = effectiveArmor / (100 + effectiveArmor);
-  return Math.floor(normalize(power) * (1 - damageDecrease));
+
+  // JavaScript には小数点以下の処理をするための関数がいくつかあります。
+  // Math.floor は小数点以下を切り捨て
+  // Math.ceil は小数点以下を切り上げ
+  // Math.round は小数点以下を四捨五入
+  return Math.round(normalize(power) * (1 - damageDecrease));
+  // return Math.floor(normalize(power) * (1 - damageDecrease));
 }
 
 /**
