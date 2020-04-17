@@ -3,12 +3,13 @@
   "version": "1.0.0",
   "description": "caliculator of damage",
   "main": "index.js",
-  "author": "",
+  "author": "Taiga Chiba <timsofy1@gmail.com>",
   "scripts": {
     "test": "node_modules/mocha/bin/mocha"
   },
   "license": "ISC",
   "devDependencies": {
     "mocha": "^4.0.1"
-  }
+  },
+  "repository": "git@github.com:timsofy/intro-curriculum-4004.git"
 }
