@@ -26,6 +26,7 @@ describe('#effectiveDamage()', () => {
 
   it('ダメージは小数点以下を四捨五入して整数にする', () => {
     assert.equal(dc.effectiveDamage(620, 100, 30), 365);
+    assert.equal(dc.effectiveDamage(623, 100, 30), 366);
   });
 
 });
