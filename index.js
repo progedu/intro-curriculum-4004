@@ -13,12 +13,14 @@
  * @param {Number} armor 防御力
  * @param {Number} armorPenetration 防御力貫通
  * @return {Number} ダメージ
+ * 
+ * Math.round関数にすると、四捨五入する
  */
 function effectiveDamage(power, armor, armorPenetration) {
   let effectiveArmor = normalize(armor) - normalize(armorPenetration);
   effectiveArmor = effectiveArmor <= 0 ? 0 : effectiveArmor;
   const damageDecrease = effectiveArmor / (100 + effectiveArmor);
-  return Math.floor(normalize(power) * (1 - damageDecrease));
+  return Math.round(normalize(power) * (1 - damageDecrease));
 }
 
 /**
