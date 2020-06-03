@@ -5,10 +5,10 @@
   "main": "index.js",
   "author": "",
   "scripts": {
-    "test": "node_modules/mocha/bin/mocha"
+    "test": "npx jest"
   },
   "license": "ISC",
   "devDependencies": {
-    "mocha": "^4.0.1"
+    "jest": "25.1.0"
   }
 }
