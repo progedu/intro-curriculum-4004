@@ -26,4 +26,8 @@ describe('#effectiveDamage()', () => {
     expect(dc.effectiveDamage(620, 100, 30)).toBe(365);
   });
 
+  test('ダメージは小数点以下を四捨五入して整数にする', () => {
+    expect(dc.effectiveDamage(620, 100, 30)).toBe(365);
+  });
+
 });
