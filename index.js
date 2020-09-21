@@ -18,8 +18,11 @@ function effectiveDamage(power, armor, armorPenetration) {
   let effectiveArmor = normalize(armor) - normalize(armorPenetration);
   effectiveArmor = effectiveArmor <= 0 ? 0 : effectiveArmor;
   const damageDecrease = effectiveArmor / (100 + effectiveArmor);
-  return Math.floor(normalize(power) * (1 - damageDecrease));
+  return Math.round(normalize(power) * (1 - damageDecrease));
 }
+// Math.floor は小数点以下を切り捨て　床でそろえる
+// Math.ceil は小数点以下を切り上げ　天井でそろえる　
+// Math.round は小数点以下を四捨五入　まるめる
 
 /**
  * 異常な可能性のある入力値を正常値にする
