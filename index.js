@@ -39,3 +39,5 @@ function normalize(n) {
 module.exports = {
   effectiveDamage: effectiveDamage
 };
+
+// gitのやり方忘れた
