@@ -40,4 +40,3 @@ module.exports = {
   effectiveDamage: effectiveDamage
 };
 
-// gitのやり方忘れた
