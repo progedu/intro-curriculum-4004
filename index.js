@@ -16,9 +16,9 @@
  */
 function effectiveDamage(power, armor, armorPenetration) {
   let effectiveArmor = normalize(armor) - normalize(armorPenetration);
-  effectiveArmor = effectiveArmor <= 0 ? 0 : effectiveArmor;
+  effectiveArmor = effectiveArmor <= 0 ? 0 : effectiveArmor; //実効防御力が0未満になった場合は0として計算するよう修正
   const damageDecrease = effectiveArmor / (100 + effectiveArmor);
-  return Math.floor(normalize(power) * (1 - damageDecrease));
+  return Math.round(normalize(power) * (1 - damageDecrease));//【練習】Math.floor()→Math.round()に変更して小数点以下を四捨五入
 }
 
 /**
@@ -29,7 +29,7 @@ function effectiveDamage(power, armor, armorPenetration) {
 function normalize(n) {
   if (n < 0) {
     return 0;
-  } else if (n >= 2000) {
+  } else if (n >= 2000) { //2000 以上の値に対する正常値化がなかったため修正
     return 2000;
   } else {
     return n;
